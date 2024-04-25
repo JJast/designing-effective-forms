@@ -25,7 +25,7 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Adres Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1">
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Wpisz adres email">
             </div>
             <div class="mb-3">
                 <label for="street" class="form-label">Ulica</label>
@@ -80,7 +80,7 @@
                 <label class="form-label">Rodzaj płatności: </label>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="paymentMethod" id="paymentKarta" value="karta" required>
-                    <label class="form-check-label" for="paymentKarta">Karta</label>
+                    <label class="form-check-label" for="paymentKarta">VISA/MasterCard</label>
                 </div>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="paymentMethod" id="paymentBlik" value="blik">
@@ -88,7 +88,7 @@
                 </div>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="paymentMethod" id="paymentPosrednik" value="pośrednik">
-                    <label class="form-check-label" for="paymentPosrednik">Pośrednik płatności</label>
+                    <label class="form-check-label" for="paymentPosrednik">Przelewy24</label>
                 </div>
             </div>
             
@@ -104,8 +104,7 @@
                 <div class="col">
                     <label for="vatNumber" class="form-label">Numer VAT</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="vatNumber" aria-describedby="vatHelp">
-                        <div id="vatHelp" class="input-group-text">Kod kraju państwa członkowskiego i seria cyfr unikalnych dla tego podmiotu gospodarczego.</div>
+                        <input type="text" class="form-control" id="vatNumber" aria-describedby="vatHelp" placeholder="Wpisz Numer VAT">
                     </div>
                 </div>
             </div>

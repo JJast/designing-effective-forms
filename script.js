@@ -68,18 +68,3 @@ function getCountryCode() {
     getCountryByIP();
     fetchAndFillCountries();
 })()
-
-
-function handleKeyDown(event) {
-    // Sprawdzenie, czy naciśnięty klawisz to Enter (kod 13)
-    if (event.keyCode === 13) {
-        // Sprawdzenie, czy aktywny element to pole tekstowe lub pole wyboru
-        if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'SELECT' || document.activeElement.tagName === 'TEXTAREA') {
-            // Wysłanie formularza
-            document.getElementById('form').submit();
-        }
-    }
-}
-
-// Dodanie nasłuchiwania zdarzenia keydown na całym dokumencie
-document.addEventListener('keydown', handleKeyDown);

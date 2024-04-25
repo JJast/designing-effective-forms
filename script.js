@@ -28,15 +28,22 @@ function getCountryByIP() {
     fetch('https://get.geojs.io/v1/ip/geo.json')
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             const country = data.country;
-            // TODO inject country to form and call getCountryCode(country) function
+            setDefaultCountry(country);
         })
         .catch(error => {
             console.error('Błąd pobierania danych z serwera GeoJS:', error);
         });
 }
 
-function getCountryCode(countryName) {
+function setDefaultCountry(countryName) {
+    const countryInputDatalist = document.getElementById('countryinput');
+    countryInputDatalist.setAttribute('value', countryName);
+}
+
+function getCountryCode() {
+    const countryName = document.getElementById('countryName').textContent;
     const apiUrl = `https://restcountries.com/v3.1/name/${countryName}?fullText=true`;
 
     fetch(apiUrl)
@@ -48,7 +55,6 @@ function getCountryCode(countryName) {
     })
     .then(data => {        
         const countryCode = data[0].idd.root + data[0].idd.suffixes.join("")
-        // TODO inject countryCode to form
     })
     .catch(error => {
         console.error('Wystąpił błąd:', error);
@@ -59,6 +65,21 @@ function getCountryCode(countryName) {
 (() => {
     // nasłuchiwania na zdarzenie kliknięcia myszką
     document.addEventListener('click', handleClick);
-
+    getCountryByIP();
     fetchAndFillCountries();
 })()
+
+
+function handleKeyDown(event) {
+    // Sprawdzenie, czy naciśnięty klawisz to Enter (kod 13)
+    if (event.keyCode === 13) {
+        // Sprawdzenie, czy aktywny element to pole tekstowe lub pole wyboru
+        if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'SELECT' || document.activeElement.tagName === 'TEXTAREA') {
+            // Wysłanie formularza
+            document.getElementById('form').submit();
+        }
+    }
+}
+
+// Dodanie nasłuchiwania zdarzenia keydown na całym dokumencie
+document.addEventListener('keydown', handleKeyDown);

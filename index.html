@@ -50,18 +50,18 @@
                         <!-- Options will be filled by JavaScript -->
                     </datalist>
                 </div>
-                <div class="mb-3 col">
-                    <label for="phoneNumber" class="form-label">Numer telefonu komórkowego</label>
-                    <div class="input-group">
-                        <select class="form-select" id="countryCode" aria-label="Wybierz numer kierunkowy">
-                            <option selected>Wybierz...</option>
-                            <option value="+48">+48 (Polska)</option>
-                            <option value="+1">+1 (Stany Zjednoczone)</option>
-                            <!-- Dodaj więcej opcji, jeśli jest to potrzebne -->
-                        </select>
-                        <input type="text" class="form-control" id="phoneNumber" placeholder="Wpisz numer komórkowy"
-                            required>
-                    </div>
+            </div>
+            <div class="mb-3">
+                <label for="phoneNumber" class="form-label">Numer telefonu komórkowego</label>
+                <div class="input-group">
+                    <select class="form-select" id="countryCode" aria-label="Wybierz numer kierunkowy">
+                        <option selected>Wybierz...</option>
+                        <option value="+48">+48 (Polska)</option>
+                        <option value="+1">+1 (Stany Zjednoczone)</option>
+                        <!-- Dodaj więcej opcji, jeśli jest to potrzebne -->
+                    </select>
+                    <input type="text" class="form-control" id="phoneNumber" placeholder="Wpisz numer komórkowy"
+                        required>
                 </div>
             </div>
             <div class="mb-3">
@@ -94,18 +94,16 @@
             
 
             <!-- Dodatkowe pola, np. dane do faktury -->
-            <div class="row mb-3">
-                <div class="col-auto">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="vatUE">
-                        <label class="form-check-label" for="vatUE">VAT UE</label>
-                    </div>
+            <div class="mb-3">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="vatUE">
+                    <label class="form-check-label" for="vatUE">VAT UE</label>
                 </div>
-                <div class="col">
-                    <label for="vatNumber" class="form-label">Numer VAT</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="vatNumber" aria-describedby="vatHelp" placeholder="Wpisz Numer VAT">
-                    </div>
+            </div>
+            <div class="mb-3">
+                <label for="vatNumber" class="form-label">Numer VAT</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="vatNumber" aria-describedby="vatHelp" placeholder="Wpisz Numer VAT">
                 </div>
             </div>
             <div class="mb-3">

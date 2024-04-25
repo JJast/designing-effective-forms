@@ -30,16 +30,16 @@ function getCountryByIP() {
         .then(data => {
             console.log(data);
             const country = data.country;
-            setDefaultCountry(country);
+            setCountry(country);
         })
         .catch(error => {
             console.error('Błąd pobierania danych z serwera GeoJS:', error);
         });
 }
 
-function setDefaultCountry(countryName) {
-    const countryInputDatalist = document.getElementById('countryinput');
-    countryInputDatalist.setAttribute('value', countryName);
+function setCountry(country) {
+    const countryInput = document.getElementById('countryinput');
+    countryInput.setAttribute('value', country);
 }
 
 function getCountryCode() {
